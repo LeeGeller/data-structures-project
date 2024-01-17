@@ -9,6 +9,7 @@ class Node:
         """
         self.data = data
         self.next_node = next_node
+        self.top = None
 
 
 class Stack:
@@ -32,5 +33,5 @@ class Stack:
 
         :return: данные удаленного элемента
         """
-        deleted_element = self.top_of_the_stack.pop()
-        return deleted_element
+        self.top = self.top_of_the_stack.pop()
+        return self.top
