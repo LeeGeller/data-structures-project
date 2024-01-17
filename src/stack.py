@@ -34,6 +34,7 @@ class Stack:
         new_node = Node(data)
         new_node.next_node = self.top
         self.top = new_node
+        self.stack.append(self.top)
 
     def pop(self):
         """
@@ -41,6 +42,7 @@ class Stack:
 
         :return: данные удаленного элемента
         """
-        item = self.top.data
-        return item
-
+        deleted_data = self.top.data
+        self.stack.pop()
+        self.top = self.top.next_node
+        return deleted_data
