@@ -32,3 +32,6 @@ class TestStack(unittest.TestCase):
         self.assertEqual(stack.top.data, 'data')
         self.assertEqual(len(stack.stack), 1)
 
+if __name__ == '__main__':
+    unittest.main()
+
