@@ -32,5 +32,5 @@ class Stack:
 
         :return: данные удаленного элемента
         """
-        deleted_element = self.top_of_the_stack.pop(0)
+        deleted_element = self.top_of_the_stack.pop()
         return deleted_element
