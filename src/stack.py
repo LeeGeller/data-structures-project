@@ -16,7 +16,7 @@ class Stack:
 
     def __init__(self):
         """Конструктор класса Stack"""
-        # self.top_of_the_stack = []
+        self.top_of_the_stack = []
 
     def push(self, data):
         """
