@@ -24,7 +24,7 @@ class Stack:
 
         :param data: данные, которые будут добавлены на вершину стека
         """
-        self.top_of_the_stack.insert(0, data)
+        self.top_of_the_stack.append(data)
 
     def pop(self):
         """
