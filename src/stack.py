@@ -13,6 +13,9 @@ class Node:
     def __repr__(self):
         return f"Node({self.data}, {self.next_node}"
 
+    def __str__(self):
+        return f"{self.data}"
+
 
 class Stack:
     """Класс для стека"""
@@ -22,8 +25,11 @@ class Stack:
         self.stack = []
         self.top = None
 
-    def __repr__(self):
-        return f"{self.stack} list"
+    def __str__(self):
+        text = ','.join(self.stack)
+        enter_text = text.replace(',', '\n')
+
+        return f"{enter_text}"
 
     def push(self, data):
         """
@@ -34,7 +40,7 @@ class Stack:
         new_node = Node(data)
         new_node.next_node = self.top
         self.top = new_node
-        self.stack.append(self.top)
+        self.stack.append(data)
 
     def pop(self):
         """
