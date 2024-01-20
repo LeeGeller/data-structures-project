@@ -18,4 +18,3 @@ if __name__ == '__main__':
     print(stack.top.next_node.next_node.next_node)  # None
     print(stack.top.next_node.next_node.next_node.data)
     # AttributeError: 'NoneType' object has no attribute 'data'
-
