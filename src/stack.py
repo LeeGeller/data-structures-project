@@ -13,6 +13,9 @@ class Node:
     def __repr__(self):
         return f"Node({self.data}, {self.next_node}"
 
+    def __str__(self):
+        return f"{self.data}"
+
 
 class Stack:
     """Класс для стека"""
