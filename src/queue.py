@@ -11,7 +11,7 @@ class Node:
         self.next_node = next_node
 
     def __repr__(self):
-        return f"Node({self.data}, {self.next_node})"
+        return f"Node({self.data})"
 
     def __str__(self):
         return f"{self.data}"
@@ -27,7 +27,10 @@ class Queue:
         self.tail = None
 
     def __str__(self):
-        return f"{self.head}"
+        text = ','.join(self.queue)
+        enter_text = text.replace(',', '\n')
+
+        return f"{enter_text}"
 
     def enqueue(self, data):
         """
@@ -43,7 +46,7 @@ class Queue:
         else:
             self.tail.next_node = new_node
             self.tail = new_node
-            self.queue.insert(0, new_node)
+            self.queue.append(data)
 
     def dequeue(self):
         """
@@ -52,3 +55,12 @@ class Queue:
         :return: данные удаленного элемента
         """
         pass
+
+
+queue = Queue()
+
+queue.enqueue('data1')
+queue.enqueue('data2')
+queue.enqueue('data3')
+
+print(str(queue))
