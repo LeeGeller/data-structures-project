@@ -1,7 +1,10 @@
+from queue import Queue as q
+
+
 class Node:
     """Класс для узла очереди"""
 
-    def __init__(self, data, next_node):
+    def __init__(self, data, next_node=None):
         """
         Конструктор класса Node
 
@@ -17,7 +20,7 @@ class Node:
         return f"{self.data}"
 
 
-class Queue:
+class Queue(q):
     """Класс для очереди"""
 
     def __init__(self):
@@ -35,7 +38,9 @@ class Queue:
 
         :param data: данные, которые будут добавлены в очередь
         """
-        pass
+        new_node = Node(data)
+        new_node.next_node = self.tail
+        q.put(self.queue, new_node.data)
 
     def dequeue(self):
         """
@@ -46,4 +51,8 @@ class Queue:
         pass
 
 
-print(Queue())
+n = Node(5)
+qu = Queue()
+qu.enqueue(n)
+
+print(qu.queue)
