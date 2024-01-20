@@ -38,3 +38,19 @@ class TestQueue(unittest.TestCase):
         self.assertEqual(queue.dequeue(), 'data2')
         self.assertEqual(queue.dequeue(), 'data3')
         self.assertEqual(queue.dequeue(), None)
+
+    def test_dequeue_len(self):
+        queue = Queue()
+
+        self.assertEqual(len(queue.queue), 0)
+        self.assertEqual(len(queue.head), 0)
+
+        queue.enqueue('data1')
+        queue.enqueue('data2')
+        queue.enqueue('data3')
+
+        self.assertEqual(len(queue.queue), 3)
+
+        queue.dequeue()
+
+        self.assertEqual(len(queue.queue), 2)
