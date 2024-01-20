@@ -55,12 +55,3 @@ class Queue:
         :return: данные удаленного элемента
         """
         pass
-
-
-queue = Queue()
-
-queue.enqueue('data1')
-queue.enqueue('data2')
-queue.enqueue('data3')
-
-print(str(queue))
