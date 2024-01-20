@@ -25,8 +25,11 @@ class Stack:
         self.stack = []
         self.top = None
 
-    def __repr__(self):
-        return f"{self.stack} list"
+    def __str__(self):
+        text = ','.join(self.stack)
+        enter_text = text.replace(',', '\n')
+
+        return f"{enter_text}"
 
     def push(self, data):
         """
