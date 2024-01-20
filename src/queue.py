@@ -1,6 +1,3 @@
-from queue import Queue as q
-
-
 class Node:
     """Класс для узла очереди"""
 
@@ -20,7 +17,7 @@ class Node:
         return f"{self.data}"
 
 
-class Queue(q):
+class Queue:
     """Класс для очереди"""
 
     def __init__(self):
@@ -39,8 +36,14 @@ class Queue(q):
         :param data: данные, которые будут добавлены в очередь
         """
         new_node = Node(data)
-        new_node.next_node = self.tail
-        q.put(self.queue, new_node.data)
+        if len(self.queue) == 0:
+            self.head = new_node
+            self.tail = new_node
+            self.queue.append(data)
+        else:
+            self.tail.next_node = new_node
+            self.tail = new_node
+            self.queue.insert(0, new_node)
 
     def dequeue(self):
         """
@@ -49,10 +52,3 @@ class Queue(q):
         :return: данные удаленного элемента
         """
         pass
-
-
-n = Node(5)
-qu = Queue()
-qu.enqueue(n)
-
-print(qu.queue)
