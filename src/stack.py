@@ -40,7 +40,7 @@ class Stack:
         new_node = Node(data)
         new_node.next_node = self.top
         self.top = new_node
-        self.stack.append(self.top)
+        self.stack.append(data)
 
     def pop(self):
         """
