@@ -47,6 +47,9 @@ class TestQueue(unittest.TestCase):
         self.assertEqual(queue.dequeue(), None)
         self.assertEqual(queue.dequeue(), None)
 
+        queue.enqueue(None)
+        self.assertEqual(queue.dequeue(), None)
+
     def test_dequeue_len(self):
         queue = Queue()
 
@@ -62,3 +65,8 @@ class TestQueue(unittest.TestCase):
         queue.dequeue()
 
         self.assertEqual(len(queue.queue), 2)
+
+        queue.dequeue()
+        queue.dequeue()
+        queue.dequeue()
+        self.assertEqual(len(queue.queue), 0)
