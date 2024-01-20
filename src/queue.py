@@ -10,13 +10,24 @@ class Node:
         self.data = data
         self.next_node = next_node
 
+    def __repr__(self):
+        return f"Node({self.data}, {self.next_node})"
+
+    def __str__(self):
+        return f"{self.data}"
+
 
 class Queue:
     """Класс для очереди"""
 
     def __init__(self):
         """Конструктор класса Queue"""
-        pass
+        self.queue = []
+        self.head = ""
+        self.tail = None
+
+    def __str__(self):
+        return f"{self.head}"
 
     def enqueue(self, data):
         """
@@ -34,6 +45,5 @@ class Queue:
         """
         pass
 
-    def __str__(self):
-        """Магический метод для строкового представления объекта"""
-        pass
+
+print(Queue())
