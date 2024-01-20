@@ -1,11 +1,11 @@
 import unittest
 
-from src.queue import Queue
+from src.queue import Queue, Node
 
 
 class TestQueue(unittest.TestCase):
 
-    def test_str(self):
+    def test_str_queue(self):
         queue = Queue()
 
         queue.enqueue('data1')
@@ -13,6 +13,11 @@ class TestQueue(unittest.TestCase):
         queue.enqueue('data3')
 
         self.assertEqual(str(queue), "data1\ndata2\ndata3")
+
+    def test_str_node(self):
+        node = Node('data1')
+
+        self.assertEqual(str(node), "data1")
 
     def test_enqueue(self):
         queue = Queue()
@@ -31,12 +36,15 @@ class TestQueue(unittest.TestCase):
         queue = Queue()
 
         queue.enqueue('data1')
+
+        self.assertEqual(queue.dequeue(), 'data1')
+
         queue.enqueue('data2')
         queue.enqueue('data3')
 
-        self.assertEqual(queue.dequeue(), 'data1')
         self.assertEqual(queue.dequeue(), 'data2')
         self.assertEqual(queue.dequeue(), 'data3')
+        self.assertEqual(queue.dequeue(), None)
         self.assertEqual(queue.dequeue(), None)
 
     def test_dequeue_len(self):
